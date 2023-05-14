@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 import logo from "../images/logo1.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setnav] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
       </label>
       <ul className="menu">
         <li>
-          <Link to="main" smooth={true} duration={2000}>
+          <Link to="/" smooth={true} duration={2000}>
             Home
           </Link>{" "}
         </li>

@@ -7,7 +7,7 @@ import Products from "./components/Products";
 import "./App.css";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 const App = () => {
   const [loading, setLoading] = useState(false);
   const override = css`
@@ -46,11 +46,19 @@ const App = () => {
         </div>
       ) : (
         <>
+          <BrowserRouter>
           <Navbar />
-          <Home />
+          {/* <Home />
           <Products />
           <About />
-          <Contact />
+          <Contact /> */}
+          <Routes>
+          <Route index element={<Home/>}/>
+          <Route path="products" element={<Products/>}/>
+          <Route path="contact" element={<Contact/>}/>
+          <Route path="about" element={<About/>}/>
+          </Routes>
+          </BrowserRouter>
         </>
       )}
     </div>
